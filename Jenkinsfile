@@ -8,15 +8,20 @@ pipeline {
             }
         }
         
-        stage('Compile source code'){
+        stage('Build source'){
             steps {
                 bat ''' cd /C C:\\jenkins\\jenkinslocalgit
                 npm install '''
             }
         }
-        stage('Hello') {
+        stage('Testing') {
             steps {
-                echo 'Hello World'
+                echo 'Testing Completed'
+            }
+        }
+        stage('Release') {
+            steps {
+                echo 'Release Done'
             }
         }
     }
